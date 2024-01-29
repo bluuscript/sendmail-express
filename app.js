@@ -11,7 +11,7 @@ app.use(express.json())
 // .env file variables
 const PORT = process.env.PORT || 9000
 const USER_MAIL = process.env.USER_MAIL
-const PASS_USER = process.env.USER_PASS
+const USER_PASS = process.env.USER_PASS
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
