@@ -35,7 +35,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
         from: USER_MAIL,
         to: `formcontactos@gmail.com, ${email}`,
         subject: `Cotización ${servicio}`,
-        text: `Nombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\nFono: ${fono}\nServicio: ${servicio}\nProblema: ${problema}\nExperiencia: ${experiencia}\nPresupuesto: ${presupuesto}`,
+        text: `Nombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\nFono: ${fono}\nServicio: ${servicio}\nProblema: ${problema}\nPresupuesto: ${presupuesto}`,
     })
     res.send(info.response)
 })
