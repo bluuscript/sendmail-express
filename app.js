@@ -65,7 +65,9 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                 section {
                     display: flex;
                     flex-direction: column;
-                    margin: 60px;
+                    width: 100%;
+                    margin-top: 30px;
+                    padding: 100px;
                 }
                 h2 {
                     text-align: center;
@@ -133,7 +135,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     <input id="servicio" type="text" value="${servicio}" disabled>
                 </div>
                 <h2>Problema</h2>
-                <textarea rows="17" cols="50" disabled>{problema}</textarea>
+                <textarea rows="17" cols="50" disabled>${problema}</textarea>
             </section>
         </body>
         </html>`,
