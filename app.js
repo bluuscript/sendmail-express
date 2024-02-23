@@ -48,8 +48,8 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     box-sizing: border-box;
                 }
                 body {
-                    background-color: orange;
-                    color: white;
+                    background-color: white;
+                    color: #444;
                     font-family: Arial, Helvetica, sans-serif;
                 }
                 h1 {
@@ -62,18 +62,15 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     padding: 30px;
                     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
                 }
+                section {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 60px;
+                }
                 h2 {
                     text-align: center;
                     font-weight: 700;
                     font-size: 40px;
-                }
-                .grid {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    margin-top: 30px;
-                }
-                .grid > div {
-                    justify-self: center;
                 }
                 .label-input {
                     display: block;
@@ -84,8 +81,9 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     position: absolute;
                     width: auto;
                     top: 0;
-                    left: 50px;
+                    left: 25px;
                     padding: 5px 5px;
+                    font-size: 19px;
                     font-weight: 600;
                 }
                 input {
@@ -93,7 +91,8 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     width: 100%;
                     border-radius: 10px;
                     padding: 25px 25px;
-                    margin: 20px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
                     font-size: 18px;
                     border: 0;
                     color: #444;
@@ -112,34 +111,30 @@ app.post('/dataflow/cotizacion', async (req, res) => {
         </head>
         <body>
             <h1>Cotización "Servicio"</h1>
-            <div class="grid">
-                <div>
-                    <div class="label-input">
-                        <label for="nombre">Nombre</label>
-                        <input id="nombre" type="text" value="${nombre}" disabled>
-                    </div>
-                    <div class="label-input">
-                        <label for="empresa">Empresa</label>
-                        <input id="empresa" type="text" value="${empresa}" disabled>
-                    </div>
-                    <div class="label-input">
-                        <label for="email">Email</label>
-                        <input id="email" type="text" value="${email}" disabled>
-                    </div>
-                    <div class="label-input">
-                        <label for="fono">Número Celular</label>
-                        <input id="fono" type="text" value="${fono}" disabled>
-                    </div>
-                    <div class="label-input">
-                        <label for="servicio">Servicio</label>
-                        <input id="servicio" type="text" value="${servicio}" disabled>
-                    </div>
+            <section>
+                <div class="label-input">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" value="${nombre}" disabled>
                 </div>
-                <div>
-                    <h2>Problema</h2>
-                    <textarea rows="17" cols="50" disabled>${problema}</textarea>
+                <div class="label-input">
+                    <label for="empresa">Empresa</label>
+                    <input id="empresa" type="text" value="${empresa}" disabled>
                 </div>
-            </div>
+                <div class="label-input">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" value="${email}" disabled>
+                </div>
+                <div class="label-input">
+                    <label for="fono">Número Celular</label>
+                    <input id="fono" type="text" value="${fono}" disabled>
+                </div>
+                <div class="label-input">
+                    <label for="servicio">Servicio</label>
+                    <input id="servicio" type="text" value="${servicio}" disabled>
+                </div>
+                <h2>Problema</h2>
+                <textarea rows="17" cols="50" disabled>{problema}</textarea>
+            </section>
         </body>
         </html>`,
     })
