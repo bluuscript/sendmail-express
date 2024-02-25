@@ -40,7 +40,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cotización</title>
+            <title>Cotización ${servicio}</title>
             <style>
                 * {
                     margin: 0;
@@ -51,6 +51,9 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     background-color: white;
                     color: #444;
                     font-family: Arial, Helvetica, sans-serif;
+                    max-width: 100vw;
+                    min-height: 100vh;
+                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 }
                 h1 {
                     background-color: white;
@@ -60,7 +63,6 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     font-size: 70px;
                     margin: 0;
                     padding: 30px;
-                    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
                 }
                 section {
                     display: flex;
@@ -129,10 +131,6 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                 <div class="label-input">
                     <label for="fono">Número Celular</label>
                     <input id="fono" type="text" value="${fono}" disabled>
-                </div>
-                <div class="label-input">
-                    <label for="servicio">Servicio</label>
-                    <input id="servicio" type="text" value="${servicio}" disabled>
                 </div>
                 <h2>Problema</h2>
                 <textarea rows="17" cols="50" disabled>${problema}</textarea>
