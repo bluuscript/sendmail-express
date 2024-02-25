@@ -33,7 +33,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
     console.log(req.body)
     const info = await transporter.sendMail({
         from: USER_MAIL,
-        to: `formcontactos@gmail.com`,
+        to: `formcontactos@gmail.com, ${email}`,
         subject: `Cotización ${servicio}`,
         html: `<!DOCTYPE html>
         <html lang="es">
@@ -62,7 +62,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     margin: 0;
                     padding: 30px;
                 }
-                main {
+                section {
                     display: flex;
                     flex-direction: column;
                     margin-top: 30px;
@@ -113,7 +113,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
         </head>
         <body>
             <h1>Cotización ${servicio}</h1>
-            <main>
+            <section>
                 <div class="label-input">
                     <label for="nombre">Nombre</label>
                     <input id="nombre" type="text" value="${nombre}" disabled>
@@ -128,11 +128,11 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                 </div>
                 <div class="label-input">
                     <label for="fono">Número Celular</label>
-                    <input id="fono" type="text" value="${fono}" disabled>
+                    <input id="fono" type="text" value="+569 ${fono}" disabled>
                 </div>
                 <h2>Problema</h2>
                 <textarea rows="17" cols="50" disabled>${problema}</textarea>
-            </main>
+            </section>
         </body>
         </html>`,
     })
