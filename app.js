@@ -51,8 +51,6 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     background-color: white;
                     color: #444;
                     font-family: Arial, Helvetica, sans-serif;
-                    max-width: 100vw;
-                    min-height: 100vh;
                     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 }
                 h1 {
@@ -64,12 +62,11 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     margin: 0;
                     padding: 30px;
                 }
-                section {
+                main {
                     display: flex;
                     flex-direction: column;
-                    width: 100%;
                     margin-top: 30px;
-                    padding: 100px;
+                    padding: 0 200px 200px 200px;
                 }
                 h2 {
                     text-align: center;
@@ -101,6 +98,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     border: 0;
                     color: #444;
                     font-weight: 700;
+                    background-color: orange;
                 }
                 textarea {
                     resize: none;
@@ -108,14 +106,16 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     border-radius: 10px;
                     padding: 20px;
                     font-size: 18px;
+                    font-weight: 700;
                     border: none;
                     color: #444;
+                    background-color: orange;
                 }
             </style>
         </head>
         <body>
-            <h1>Cotización "Servicio"</h1>
-            <section>
+            <h1>Cotización ${servicio}</h1>
+            <main>
                 <div class="label-input">
                     <label for="nombre">Nombre</label>
                     <input id="nombre" type="text" value="${nombre}" disabled>
@@ -133,8 +133,8 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     <input id="fono" type="text" value="${fono}" disabled>
                 </div>
                 <h2>Problema</h2>
-                <textarea rows="17" cols="50" disabled>${problema}</textarea>
-            </section>
+                <textarea rows="17" cols="50" disabled>Contenido Problema</textarea>
+            </main>
         </body>
         </html>`,
     })
