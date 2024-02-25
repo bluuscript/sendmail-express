@@ -62,7 +62,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     margin: 0;
                     padding: 30px;
                 }
-                section {
+                main {
                     display: flex;
                     flex-direction: column;
                     margin-top: 30px;
@@ -113,7 +113,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
         </head>
         <body>
             <h1>Cotización ${servicio}</h1>
-            <section>
+            <main>
                 <div class="label-input">
                     <label for="nombre">Nombre</label>
                     <input id="nombre" type="text" value="${nombre}" disabled>
@@ -132,7 +132,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                 </div>
                 <h2>Problema</h2>
                 <textarea rows="17" cols="50" disabled>${problema}</textarea>
-            </section>
+            </main>
         </body>
         </html>`,
     })
