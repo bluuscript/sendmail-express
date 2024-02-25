@@ -72,6 +72,8 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     text-align: center;
                     font-weight: 700;
                     font-size: 40px;
+                    color: #444;
+                    width: auto;
                 }
                 .label-input {
                     display: block;
@@ -114,7 +116,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
             </style>
         </head>
         <body>
-            <h1>Cotización "Servicio"</h1>
+            <h1>Cotización ${servicio}</h1>
             <main>
                 <div class="label-input">
                     <label for="nombre">Nombre</label>
