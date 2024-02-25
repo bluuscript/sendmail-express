@@ -34,7 +34,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
     const info = await transporter.sendMail({
         from: USER_MAIL,
         to: `formcontactos@gmail.com`,
-        subject: `Cotización Servicio: ${servicio}`,
+        subject: `Cotización ${servicio}`,
         html: `<!DOCTYPE html>
         <html lang="es">
         <head>
@@ -76,14 +76,11 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                 .label-input {
                     display: block;
                     position: relative;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
                 }
                 label {
                     display: block;
-                    position: absolute;
-                    width: auto;
-                    top: 0;
-                    left: 25px;
-                    padding: 5px 5px;
                     font-size: 19px;
                     font-weight: 600;
                 }
@@ -92,7 +89,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     width: 100%;
                     border-radius: 10px;
                     padding: 25px 25px;
-                    margin-top: 20px;
+                    margin-top: 10px;
                     margin-bottom: 20px;
                     font-size: 18px;
                     border: 0;
@@ -110,6 +107,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     border: none;
                     color: #444;
                     background-color: orange;
+                    width: 100%;
                 }
             </style>
         </head>
@@ -133,7 +131,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                     <input id="fono" type="text" value="${fono}" disabled>
                 </div>
                 <h2>Problema</h2>
-                <textarea rows="17" cols="50" disabled>Contenido Problema</textarea>
+                <textarea rows="17" cols="50" disabled>${problema}</textarea>
             </main>
         </body>
         </html>`,
