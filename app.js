@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 app.post('/dataflow/cotizacion', async (req, res) => {
     // Datos Formulario de Cotización de Página Web de DataFlow
     const { nombre, empresa, email, fono, servicio, problema } = req.body
-    console.log(`RUTA: /dataflow/cotizacion - body: ${req.body}`)
+    console.log('RUTA: /dataflow/cotizacion', req.body)
     const info = await transporter.sendMail({
         from: USER_MAIL,
         to: `formcontactos@gmail.com, ${email}`,
