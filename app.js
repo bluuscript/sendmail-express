@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
 app.post('/dataflow/contacto', async (req, res) => {
     // Datos Formulario de Cotización de Página Web de DataFlow
-    const { nombre, empresa, email, fono, servicio, problema, presupuesto } = req.body
+    const { nombre, empresa, email, fono, servicio, problema } = req.body
     console.log(`RUTA: /dataflow/cotizacion - body: ${req.body}`)
     const info = await transporter.sendMail({
         from: USER_MAIL,
@@ -137,20 +137,6 @@ app.post('/dataflow/contacto', async (req, res) => {
         </body>
         </html>`,
     })
-    res.send(info.response)
-})
-
-app.post('/dataflow/contacto', async (req, res) => {
-    // Formulario de Contacto de Página Web de DataFlow
-    const { nombre, email, fono, problema } = req.body
-    console.log(`RUTA: /dataflow/contacto - body: ${req.body}`)
-    const info = await transporter.sendMail({
-        from: USER_MAIL,
-        to: `formcontactos@gmail.com`,
-        subject: 'Contacto',
-        text: `Nombre: ${nombre}\nFrom Email: ${email}\nFono: ${fono}\nProblema: ${problema}`,
-    })
-
     res.send(info.response)
 })
 
