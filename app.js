@@ -24,13 +24,13 @@ const transporter = nodemailer.createTransport({
 })
 
 app.get('/', (req, res) => {
-    res.send(`Logs de Correos Enviados`)
+    res.send(`TODO: Logs de Correos Enviados`)
 })
 
-app.post('/dataflow/cotizacion', async (req, res) => {
+app.post('/dataflow/contacto', async (req, res) => {
     // Datos Formulario de Cotización de Página Web de DataFlow
     const { nombre, empresa, email, fono, servicio, problema, presupuesto } = req.body
-    console.log(req.body)
+    console.log(`RUTA: /dataflow/cotizacion - body: ${req.body}`)
     const info = await transporter.sendMail({
         from: USER_MAIL,
         to: `formcontactos@gmail.com, ${email}`,
@@ -117,7 +117,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
             </style>
         </head>
         <body>
-            <h1>Cotización ${servicio}</h1>
+            <h1>Cotización "Servicio"</h1>
             <main>
                 <div class="label-input">
                     <label for="nombre">Nombre</label>
@@ -126,10 +126,6 @@ app.post('/dataflow/cotizacion', async (req, res) => {
                 <div class="label-input">
                     <label for="empresa">Empresa</label>
                     <input id="empresa" type="text" value="${empresa}" disabled>
-                </div>
-                <div class="label-input">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" value="${email}" disabled>
                 </div>
                 <div class="label-input">
                     <label for="fono">Número Celular</label>
@@ -147,7 +143,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
 app.post('/dataflow/contacto', async (req, res) => {
     // Formulario de Contacto de Página Web de DataFlow
     const { nombre, email, fono, problema } = req.body
-    console.log(req.body)
+    console.log(`RUTA: /dataflow/contacto - body: ${req.body}`)
     const info = await transporter.sendMail({
         from: USER_MAIL,
         to: `formcontactos@gmail.com`,
@@ -157,5 +153,20 @@ app.post('/dataflow/contacto', async (req, res) => {
 
     res.send(info.response)
 })
+
+// Manego de Correos de Minutador
+app.post('/minutador/contacto', async (req, res) => {
+    const { nombre, email, mensaje } = req.body
+    console.log(`RUTA: /minutador/contacto - body: ${req.body}`)
+    const info = await transporter.sendMail({
+        from: USER_MAIL,
+        to: `formcontactos@gmail.com`,
+        subject: 'Contacto Minutador',
+        text: `Nombre: ${nombre}\nFrom Email: ${email}\nMensaje: ${mensaje}`,
+    })
+
+    res.send(info.response)
+})
+
 
 app.listen(PORT, () => `app listening on port ${PORT}`)
