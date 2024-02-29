@@ -117,7 +117,7 @@ app.post('/dataflow/cotizacion', async (req, res) => {
             </style>
         </head>
         <body>
-            <h1>Cotización "Servicio"</h1>
+            <h1>Contacto ${servicio}</h1>
             <main>
                 <div class="label-input">
                     <label for="nombre">Nombre</label>
